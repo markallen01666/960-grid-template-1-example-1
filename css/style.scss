@@ -1,0 +1,167 @@
+/*
+  960 Grid Example 1 - using style 1 template
+
+  This template uses CSS Grid/Flexbox and the 960 Grid system. It is an example site building my template style 1
+
+  Uses: HTML5 and CSS3
+
+  Mark Allen - markallenwebdeveloper.co.uk - 2018
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+/* Extends */
+%element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+}
+
+html, body {
+  background-color: #555555;
+  color: #FFFFFF;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  h1 {
+    font-size: 8vh;
+  }
+  h2 {
+    font-size: 4vh;
+  }
+  h3 {
+    font-size: 3.5vh;
+  }
+  li {
+    font-size: 2.67vh;
+  }
+  p {
+    font-size: 2.67vh;
+  }
+  a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+}
+
+/* Grid layout */
+.container {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "s s s s s s s s s c c c"
+    "a a a a a a a a a d d d"
+    "t t t t t t t t t e e e"
+    "f f f f f f f f f f f f"
+    "g g g g g g g g g g g g";
+}
+/* Style for narrow viewport */
+@media only screen and (max-width: 820px) {
+  .container {
+    height: auto;
+    background-color: #FFFFFF;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+    "s s s s s s s s s s s s"
+    "a a a a a a a a a a a a"
+    "t t t t t t t t t t t t"
+    "f f f f f f f f f f f f"
+    "g g g g g g g g g g g g";
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  aside {
+    display: none;
+  }
+}
+
+/* Define element styling */
+figure {
+  margin: 0;
+}
+img {
+  object-fit: cover;
+ 
+}
+#figure1 {
+  grid-area: s;
+  @extend %element;
+}
+#section1 {
+  grid-area: a;
+  background-color: #FFFFFF;
+  color: #555555;
+  @extend %element;
+  justify-content: flex-start;
+}
+#main {
+  display: block;
+  margin-bottom: 6vh;
+  background-color: #FFFFFF;
+  color: #555555;
+}
+#figure2 {
+  grid-area: t;
+  @extend %element;
+}
+aside {
+  @extend %element;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #FFFFFF;
+  background-color: #555555;
+  
+  h1 {
+    font-size: 3.5vw;
+  }
+}
+#aside1 {
+  grid-area: c;
+}
+#aside2 {
+  grid-area: d;
+}
+#aside3 {
+  grid-area: e;
+}
+
+#contact {
+  grid-area: f;
+  flex-direction: column;
+  text-align: center;
+  background-color: #FFFFFF;
+  color: #555555;
+}
+#info {
+  grid-area: g;
+  @extend %element;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #555555;
+  color: #FFFFFF;
+
+  p {
+    text-align: center;
+    font-size: 2vh;
+  }
+}
+
