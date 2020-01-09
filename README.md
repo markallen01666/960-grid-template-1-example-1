@@ -6,4 +6,3 @@ For large displays, I've used an (almost) full-length aside on the right-hand si
 
 The site was built using HTML, CSS and SASS/SCSS. The design was styled using CSS Flexbox and Grid. 
 
-Site: https://markallenwebdeveloper.co.uk/portfolio/Arcadia/
